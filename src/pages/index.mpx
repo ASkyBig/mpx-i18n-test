@@ -1,21 +1,27 @@
 <template>
-  <list></list>
+  <view>
+    <view>{{ $t('hello') }}</view>
+    <view>{{ $t('500+ reviews') }}</view>
+    <view>{{ $t('reviews 500+') }}</view>
+    <view>Text from data: {{ testMsg }}</view>
+  </view>
 </template>
 
 <script>
-import { createPage } from '@mpxjs/core'
+    import { createPage } from '@mpxjs/core'
 
-createPage({
-  onLoad() {
-    //
-  }
-})
+    createPage({
+      data: {
+        testMsg: ''
+      },
+      onLoad() {
+        this.testMsg = this.$t('500+ reviews')
+      }
+    })
 </script>
 
 <script type="application/json">
-  {
-    "usingComponents": {
-      "list": "../components/list"
+    {
+      "usingComponents": {}
     }
-  }
 </script>
